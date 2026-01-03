@@ -8,11 +8,11 @@
     background-position: center;
     height: 16px;
     width: 16px;
+  }
 
-    @for $i from 1 through 4 {
-      &--#{$i} {
-        background-image: url(../images/star-active.svg);
-      }
-    }
+  &--active :nth-child(-n + 4) {
+    background-image: url(../images/star-active.svg);
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

@@ -1,5 +1,7 @@
-@use './variables.scss';
+@use './variables.scss' as *;
 @use './mixins.scss';
+@use './card.scss';
+@use './stars.scss';
 
 html {
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -14,90 +16,26 @@ p {
   margin: 0;
 }
 
-.card {
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  width: 200px;
-  padding: 32px 16px 16px;
-  box-sizing: border-box;
-
-  background-color: #fff;
-  border: 1px solid #f3f3f3;
-  border-radius: 5px;
-
-  &__img {
-    display: flex;
-    align-self: center;
-    width: 160px;
-    height: 134px;
-
-    &--spacing {
-      margin-bottom: 40px;
-    }
-  }
-
-  &__price {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-
-    &--spacing {
-      margin-bottom: 16px;
-    }
-  }
-
-  &__rewiev {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    &--spacing {
-      margin-bottom: 23px;
-    }
-  }
-
-  &__title {
-    color: variables.$main-accent-color;
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: 500;
-    letter-spacing: 0%;
-
-    &--spacing {
-      margin-bottom: 4px;
-    }
-  }
-
-  &__product-code {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: 0%;
-    color: variables.$secondary-font-color;
-
-    &--spacing {
-      margin-bottom: 16px;
-    }
-  }
-}
-
 .price__price {
   font-size: 16px;
 }
 
-.rewiev__stars {
+.review {
   display: flex;
-  gap: 4px;
-}
+  align-items: end;
 
-.rewiev__count {
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: 0%;
-  color: variables.$main-accent-color;
+  &__stars {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__count {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0%;
+    color: $main-accent-color;
+  }
 }
 
 .price__title {
@@ -105,61 +43,39 @@ p {
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0%;
-  color: variables.$secondary-font-color;
+  color: $secondary-font-color;
 
   &__price {
     font-size: 12px;
     font-weight: 700;
     line-height: 18px;
     letter-spacing: 0%;
-    color: variables.$main-accent-color;
+    color: $main-accent-color;
   }
-}
-
-.stars {
-  display: flex;
-  flex-direction: row;
-
-  &__star {
-    background-image: url(/src/images/star.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 16px;
-    width: 16px;
-  }
-}
-
-.stars__star:not(:last-child) {
-  background-image: url(../images/star-active.svg);
 }
 
 .btn {
   font-family: inherit;
   height: 40px;
   border-radius: 5px;
-  background-color: variables.$moyo-color;
+  background-color: $moyo-color;
   border: none;
   text-transform: uppercase;
-}
 
-.btn__link {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 16px;
-  text-decoration: none;
-}
+  &__link {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    text-decoration: none;
+  }
 
-.btn:hover {
-  background-color: #fff;
-  border: 1px solid variables.$moyo-color;
-}
+  &:hover {
+    background-color: #fff;
+    border: 1px solid $moyo-color;
+  }
 
-.btn:hover .btn__link {
-  color: variables.$moyo-color;
-}
-
-.rewiev {
-  display: flex;
-  align-items: end;
+  &:hover &__link {
+    color: $moyo-color;
+  }
 }
